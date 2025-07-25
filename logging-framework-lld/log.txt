@@ -1,0 +1,8 @@
+[2025-07-25T20:13:37.579094] [INFO] [main]:[This is an information message]
+[2025-07-25T20:13:37.580642] [WARN] [main]:[This is a warning message]
+[2025-07-25T20:13:37.580681] [ERROR] [main]:[This is an error message]
+[2025-07-25T20:13:37.580692] [WARN] [main]:[This is an information message]
+[2025-07-25T20:14:03.169417] [INFO] [main]: This is an information message
+[2025-07-25T20:14:03.170507] [WARN] [main]: This is a warning message
+[2025-07-25T20:14:03.170530] [ERROR] [main]: This is an error message
+[2025-07-25T20:14:03.170540] [WARN] [main]: This is an information message
