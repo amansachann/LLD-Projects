@@ -60,3 +60,16 @@ IDLE --> PREPARING --> DISPENSING --> IDLE
 - InventoryManager
 - PaymentProcessor 
 - Admin
+
+--- 
+## Assumptions
+- Payment is instant (third party service)
+- All CoffeeTypes are fixed
+- Ingredients are filled manually by admin
+- Once coffee is made it is always successful, no errors.
+- No data is saved - everything in memory.
+---
+
+## Trade-offs
+- Used synchronized for thread safety -> slower performance under high load
+- Used enum for coffee types -> can't add more coffee types without code changes

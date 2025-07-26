@@ -22,7 +22,7 @@ public class CoffeeMachine {
         this.currentState = currentState;
     }
 
-    public void processOrder(CoffeeType type, Payment paymentMethod) {
+    public synchronized void processOrder(CoffeeType type, Payment paymentMethod) {
        currentState.handle(this, type, paymentMethod);
     }
 

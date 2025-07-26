@@ -14,14 +14,14 @@ public class IngredientStore {
         inventory.put("sugar", 300);
     }
 
-    public boolean hasEnough(Recipe recipe) {
+    public synchronized boolean hasEnough(Recipe recipe) {
         return inventory.get("water") >= recipe.getWater() &&
                 inventory.get("milk") >= recipe.getMilk() &&
                 inventory.get("coffeeBeans") >= recipe.getCoffeeBeans() &&
                 inventory.get("sugar") >= recipe.getSugar();
     }
 
-    public void consume(Recipe recipe) {
+    public synchronized void consume(Recipe recipe) {
         inventory.put("water", inventory.get("water")-recipe.getWater());
         inventory.put("milk", inventory.get("milk")-recipe.getMilk());
         inventory.put("coffeeBeans", inventory.get("coffeeBeans") - recipe.getMilk());
