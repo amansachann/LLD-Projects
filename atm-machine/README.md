@@ -171,8 +171,6 @@ Design and implement an ATM (Automated Teller Machine) system that allows users 
 ---
 ## ✅ ATM Machine LLD –  Core Entities
 
-
-
 ### 🏧 1. `ATM` (Singleton)
 - 💡 **Purpose:** Central system that handles states, sessions, and operations.
 - 🔧 **Key Fields:**
@@ -243,3 +241,55 @@ Design and implement an ATM (Automated Teller Machine) system that allows users 
 - 💡 **Purpose:** Creates and links note dispensers in proper order.
 - 🔧 **Method:**
     - `createChain()` → ₹100 → ₹50 → ₹20
+---
+![img.png](img.png)
+---
+## ✅ Assumptions 🧠
+- Only one ATM is present (Singleton pattern used).
+- Only ₹100, ₹50, and ₹20 notes are supported (configurable).
+- User must insert a valid card before interacting.
+- PIN validation is handled by a mock `BankService`.
+- Session ends after user ejects card.
+- No hardware-level exception handling (e.g. card stuck).
+- No support for network/server failure in `BankService`.
+- Fixed number of notes for each denomination (set inside Dispenser).
+- ATM handles one user at a time (no thread pool or session queue).
+- No GUI - only console simulation is used.
+
+---
+## ⚖️ Trade-offs Made
+1. **Singleton Pattern for ATM**  
+   ✅ Easy to manage one ATM instance  
+   ❌ Not scalable for multiple ATMs (can’t simulate multiple ATMs per branch)
+
+2. **State Pattern**  
+   ✅ Clean, modular behavior per state  
+   ❌ Slight increase in complexity and number of classes
+
+3. **Chain of Responsibility for Cash Dispensing**  
+   ✅ Very extensible (can add ₹10, ₹200, ₹500 easily)  
+   ❌ More setup code for small systems
+
+4. **Thread Safety with synchronized methods**  
+   ✅ Basic concurrency protection on shared account balance  
+   ❌ Doesn’t handle full multi-user simulation (no session locks, no concurrent sessions)
+
+5. **In-memory Data Only (BankService)**  
+   ✅ Fast, testable, easy to mock  
+   ❌ Not persistent — everything resets on restart
+
+6. **Hardcoded PIN and Account Setup**  
+   ✅ Simple for demo and interviews  
+   ❌ Not secure / scalable in real-world usage
+---
+## 🔭 Scope for improvement 🚀
+- ✅ Support multiple users using session/thread-based locking
+- 🔐 Add session timeout / login attempt limits
+- 💸 Add more denominations (₹200, ₹500, ₹10)
+- 💾 Store data in a database instead of in-memory maps
+- 📲 Add mobile OTP for two-factor authentication
+- 📈 Add transaction history tracking (e.g., Mini Statement)
+- ⚠️ Handle failure cases: power loss, network failure, dispenser jam
+- 🧪 Add unit tests for state transitions and dispenser logic
+- 📱 Add a UI or web-based frontend for ATM interaction
+- 🏦 Support multiple ATMs using Factory + Singleton-per-location pattern
