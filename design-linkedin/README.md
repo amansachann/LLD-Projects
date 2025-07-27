@@ -1,5 +1,16 @@
 # Design LinkedIn (LLD)
 
+> ⚠️ **Disclaimer**  
+> - This is a detailed and modular implementation of a LinkedIn-like system for educational purposes.  
+> - It is **not possible** to implement every single detail like this in a **real-world 30–45 minute LLD interview**.  
+> - The goal here is to showcase a **complete, extensible, and modular design**.  
+> - In an interview, always start by asking **clarifying questions** to **narrow down the scope**.  
+> - Focus on core components first: entities, flows, relationships, and trade-offs.  
+> - Skip implementation-heavy parts unless explicitly asked.  
+> - Keep your design **flexible, scalable**, and emphasize **object-oriented principles** and **design patterns**.  
+> - Use this project as a **reference or portfolio**, not as an expected interview output.
+
+
 ## 🧠 Problem Statement
 Design and implement a LinkedIn-like professional networking platform that allows users to create profiles, connect with others, post jobs, send messages, and receive notifications.
 
