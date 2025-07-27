@@ -1,5 +1,25 @@
-# Design ATM Machine (LLD
+# Design ATM Machine (LLD)
 
+
+> ⚠️ **Disclaimer**
+>
+> This project contains a complete and modular implementation of an ATM Machine LLD  
+> using design patterns like State, Singleton, and Chain of Responsibility.
+>
+> ⚠️ Please note that **implementing this entire solution during a real-world interview (30–45 mins)**  
+> is **not practically feasible**.
+>
+> ✅ In interviews, focus on:
+> - Clarifying the problem and core requirements first
+> - Designing key components and flows
+> - Explaining patterns and trade-offs clearly
+>
+> This code is intended as a **comprehensive learning resource** and should be used to  
+> understand concepts and structure — not as a strict interview template.
+>
+> 👉 Always adapt your approach based on the interviewer’s expectations and time constraints.
+
+---
 ## ✅ ATM Machine LLD – Problem Statement
 Design and implement an ATM (Automated Teller Machine) system that allows users to perform basic banking operations such as balance inquiry, cash withdrawal, and cash deposit, with secure authentication and proper cash management.
 
@@ -244,7 +264,7 @@ Design and implement an ATM (Automated Teller Machine) system that allows users 
 ---
 ![img.png](img.png)
 ---
-## ✅ Assumptions 🧠
+## ✅ Assumptions -- which I made while writing this code 🧠
 - Only one ATM is present (Singleton pattern used).
 - Only ₹100, ₹50, and ₹20 notes are supported (configurable).
 - User must insert a valid card before interacting.
